@@ -230,8 +230,8 @@
                 },
                 {
                     "name": "",
-                    "id": "b3c5e63e-20f8-4bdc-b014-ff7890a9c383",
-                    "path": "<VirtualMouse>/leftButton",
+                    "id": "5963d1e4-c616-40d6-9b84-fd41eb053b2b",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
