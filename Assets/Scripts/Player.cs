@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 	
 	[Tooltip("Ammo slot ")]
 	[SerializeField]
-	private Ammo ammoSlot;
+	public Ammo ammoSlot;
 	
 	[Tooltip("Ammo type ")]
 	[SerializeField]

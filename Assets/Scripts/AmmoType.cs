@@ -1,7 +1,7 @@
 
 public enum AmmoType 
 {
-   pistlBullets,
+   pistolBullets,
    shotgunBullets,
    carbineBullets,
    sniperBullets
