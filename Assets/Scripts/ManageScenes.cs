@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class ManageScenes : MonoBehaviour
 {
 	public void Play() {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-   }
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		Time.timeScale = 1;
+	 }
 
-   public void Quit() {
-     Application.Quit();
-   }
+	 public void Quit() {
+		 Application.Quit();
+	 }
 }
