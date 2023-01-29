@@ -80,6 +80,7 @@ public class Player : MonoBehaviour
 	private void PlayMuzzleflash()
 	{
 		muzzleflash.Play();
+		Debug.Log("Muzzled");
 	}
 	
 	private void PlayHitEffect(RaycastHit hit) 
@@ -92,14 +93,14 @@ public class Player : MonoBehaviour
 	
 	IEnumerator  Shoot()
 	{
-		 canShoot = false;
-		if(ammoSlot.AmmoRemaining(ammoType) > 0) 
-		{
+		 canShoot = true;
+		// if(ammoSlot.AmmoRemaining(ammoType) > 0) 
+		// {
 			
 		ProcessRaycast();
 		PlayMuzzleflash();
-		ammoSlot.ReduceAmmo(ammoType);
-		}
+		// ammoSlot.ReduceAmmo(ammoType);
+		// }
 		// instantiate the bullet
 		// GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position,transform.rotation);
 		// Add force and direction
