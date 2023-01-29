@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
 	
 	IEnumerator  Shoot()
 	{
-		 canShoot = true;
+		 canShoot = false;
 		// if(ammoSlot.AmmoRemaining(ammoType) > 0) 
 		// {
 			
