@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-   [SerializeField]
-	private float hitPoints = 100f;
+   [SerializeField] float hitPoints = 3f;
+  
 	
 	//call this method in Shoot()
 	public void TakeDamage(float damage) 
 	{
 		hitPoints -= damage;
-		DeadPlayer();
+		Debug.Log("Attacked by the enemy :" + hitPoints);
+		// DeadPlayer();
+		if (hitPoints <= 0) 
+		{
+			GetComponent<DeathHandler>().HandleDeath();
+			//Play dead music, animations, ete
+			// Destroy(gameObject);
+		}
 	}
 	
 	private void DeadPlayer() 
 	{
 		if (hitPoints <= 0) 
 		{
+			GetComponent<DeathHandler>().HandleDeath();
 			//Play dead music, animations, ete
-			Destroy(gameObject);
+			// Destroy(gameObject);
 		}
 	}
 }

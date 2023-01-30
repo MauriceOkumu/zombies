@@ -9,6 +9,10 @@ public class ManageScenes : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		Time.timeScale = 1;
 	 }
+	public void Restart() {
+		SceneManager.LoadScene(0);
+		Time.timeScale = 1;
+	 }
 
 	 public void Quit() {
 		 Application.Quit();

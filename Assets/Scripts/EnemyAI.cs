@@ -57,6 +57,7 @@ public class EnemyAI : MonoBehaviour
 	}
 	private void AttackTarget () 
 	{
+		animator.SetTrigger("attack");
 		Debug.Log("Attacking the player");
 	}
 	 private void OnDrawGizmosSelected() {

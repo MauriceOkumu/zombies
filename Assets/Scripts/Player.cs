@@ -45,12 +45,17 @@ public class Player : MonoBehaviour
 	
 	EnemyHealth enemyHealth;
 	
+	public int scorePoint = 0;
+	
+	public Score score;
+	
 	private StarterAssetsInputs input;
 	void Start()
 	{
 		// get the component from the parent of the gun
 		input = transform.root.GetComponent<StarterAssetsInputs>();
 		enemyHealth = FindObjectOfType<EnemyHealth>();
+		score = FindObjectOfType<Score>();
 	}
 	private void OnEnable() {
 		canShoot = true;
@@ -74,6 +79,8 @@ public class Player : MonoBehaviour
 		if(enemyHealth != null) enemyHealth.TakeDamage(damage);
 		Debug.DrawRay(bulletPoint.transform.position,bulletPoint.transform.forward * hit.distance, Color.red);
 		PlayHitEffect(hit);
+		scorePoint++;
+		score.updateScore(scorePoint);
 		} else 
 	{
 		return;
@@ -83,7 +90,6 @@ public class Player : MonoBehaviour
 	private void PlayMuzzleflash()
 	{
 		muzzleflash.Play();
-		Debug.Log("Muzzled");
 	}
 	
 	private void PlayHitEffect(RaycastHit hit) 
