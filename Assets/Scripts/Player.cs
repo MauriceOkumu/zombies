@@ -43,11 +43,14 @@ public class Player : MonoBehaviour
 	
 	bool canShoot = true;
 	
+	EnemyHealth enemyHealth;
+	
 	private StarterAssetsInputs input;
 	void Start()
 	{
 		// get the component from the parent of the gun
 		input = transform.root.GetComponent<StarterAssetsInputs>();
+		enemyHealth = FindObjectOfType<EnemyHealth>();
 	}
 	private void OnEnable() {
 		canShoot = true;
@@ -68,6 +71,7 @@ public class Player : MonoBehaviour
 		if(Physics.Raycast(bulletPoint.transform.position, bulletPoint.transform.forward, out hit, range))
 		{
 		//Visualize the ray
+		enemyHealth.TakeDamage(damage);
 		Debug.DrawRay(bulletPoint.transform.position,bulletPoint.transform.forward * hit.distance, Color.red);
 		Debug.Log("Raycast sent" + hit.transform.name);
 		PlayHitEffect(hit);
