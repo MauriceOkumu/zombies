@@ -71,9 +71,8 @@ public class Player : MonoBehaviour
 		if(Physics.Raycast(bulletPoint.transform.position, bulletPoint.transform.forward, out hit, range))
 		{
 		//Visualize the ray
-		enemyHealth.TakeDamage(damage);
+		if(enemyHealth != null) enemyHealth.TakeDamage(damage);
 		Debug.DrawRay(bulletPoint.transform.position,bulletPoint.transform.forward * hit.distance, Color.red);
-		Debug.Log("Raycast sent" + hit.transform.name);
 		PlayHitEffect(hit);
 		} else 
 	{

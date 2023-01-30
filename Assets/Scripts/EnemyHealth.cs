@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
 	//call this method in Shoot()
 	public void TakeDamage(float damage) 
 	{
+		//Provoke the enemy when shot
+		BroadcastMessage("OnDamageTaken");
 		hitPoints -= damage;
 		DeadZombie(hitPoints);
 	}

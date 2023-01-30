@@ -14,10 +14,12 @@ public class EnemyAI : MonoBehaviour
 	[Tooltip("The distance to the target")]
 	float targetDistance = Mathf.Infinity;
 	 UnityEngine.AI.NavMeshAgent agent;
+	 Animator animator;
 	 bool isProvoked = false;
 	void Start()
 	{
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+		animator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -50,6 +52,7 @@ public class EnemyAI : MonoBehaviour
 	}
 	private void ChaseTarget () 
 	{
+		animator.SetTrigger("move");
 		 agent.SetDestination(target.position);
 	}
 	private void AttackTarget () 
@@ -59,6 +62,12 @@ public class EnemyAI : MonoBehaviour
 	 private void OnDrawGizmosSelected() {
 		Gizmos.color = new Color(1, 1, 0, 0.75F);
 		Gizmos.DrawWireSphere(transform.position, chaseRange);
+	}
+	
+	//provoke the enemy when shot
+	public void OnDamageTaken() 
+	{
+		isProvoked = true;
 	}
 	
 }
