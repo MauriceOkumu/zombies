@@ -22,10 +22,10 @@ public class Score : MonoBehaviour
 		score = amount;
 	   
 	}
-	 void Awake()
-    {
+	//  void Awake()
+    // {
 
-        DontDestroyOnLoad(gameObject);
-    }
+    //     DontDestroyOnLoad(gameObject);
+    // }
 
 }

@@ -75,12 +75,19 @@ public class Player : MonoBehaviour
 		
 		if(Physics.Raycast(bulletPoint.transform.position, bulletPoint.transform.forward, out hit, range))
 		{
+		
+			if(hit.transform.tag == "Enemy")
+			{
+				
+				if(enemyHealth != null) enemyHealth.TakeDamage(damage);
+				scorePoint++;
+				score.updateScore(scorePoint);
+			}
+		Debug.Log(" Enemy name "+ hit.transform.tag);
 		//Visualize the ray
-		if(enemyHealth != null) enemyHealth.TakeDamage(damage);
 		Debug.DrawRay(bulletPoint.transform.position,bulletPoint.transform.forward * hit.distance, Color.red);
 		PlayHitEffect(hit);
-		scorePoint++;
-		score.updateScore(scorePoint);
+		
 		} else 
 	{
 		return;
