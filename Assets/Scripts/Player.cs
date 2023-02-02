@@ -110,13 +110,13 @@ public class Player : MonoBehaviour
 	IEnumerator  Shoot()
 	{
 		 canShoot = false;
-		// if(ammoSlot.AmmoRemaining(ammoType) > 0) 
-		// {
+		if(ammoSlot.AmmoRemaining(ammoType) > 0) 
+		{
 			
 		ProcessRaycast();
 		PlayMuzzleflash();
-		// ammoSlot.ReduceAmmo(ammoType);
-		// }
+		ammoSlot.ReduceAmmo(ammoType);
+		}
 		// instantiate the bullet
 		// GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position,transform.rotation);
 		// Add force and direction

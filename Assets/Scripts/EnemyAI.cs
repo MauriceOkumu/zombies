@@ -31,16 +31,20 @@ public class EnemyAI : MonoBehaviour
 		{
 			enabled = false;
 			agent.enabled = false;
-		}
-		targetDistance = Vector3.Distance(target.position, transform.position);
-		if(isProvoked) 
+		} else 
 		{
-			EngageTarget();
-		}
-		//See if the player is in attack range
-		else if(targetDistance <= chaseRange)
-		{
-			isProvoked = true;
+			
+		
+			targetDistance = Vector3.Distance(target.position, transform.position);
+			if(isProvoked) 
+			{
+				EngageTarget();
+			}
+			//See if the player is in attack range
+			else if(targetDistance <= chaseRange)
+			{
+				isProvoked = true;
+			}
 		}
 		
 		// if(targetDistance <= chaseRange) agent.SetDestination(target.position);
@@ -54,6 +58,7 @@ public class EnemyAI : MonoBehaviour
 		}
 		else if (targetDistance <= agent.stoppingDistance) 
 		{
+		
 			AttackTarget();
 		}
 	}

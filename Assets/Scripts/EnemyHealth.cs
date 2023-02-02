@@ -20,13 +20,16 @@ public class EnemyHealth : MonoBehaviour
 	
 	public bool IsDead() 
 	{
-		Debug.Log("Dead now");
+		// Debug.Log("Dead now");
 		return isDead;
 	}
 	
 	private void DeadZombie()
 	{
-		if(isDead) return;
+		if(isDead) {
+			Debug.Log("Dead now");
+			return;
+		}
 		isDead = true;
 		// Play the dead animation
 		GetComponent<Animator>().SetTrigger("dead");
