@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
 	[SerializeField]
 	private float hitPoints = 10f;
+	bool isDead = false;
 	
 	//call this method in Shoot()
 	public void TakeDamage(float damage) 
@@ -14,15 +15,23 @@ public class EnemyHealth : MonoBehaviour
 		//Provoke the enemy when shot
 		BroadcastMessage("OnDamageTaken");
 		hitPoints -= damage;
-		DeadZombie(hitPoints);
+		if(hitPoints <= 0) DeadZombie();
 	}
 	
-	private void DeadZombie(float dead) 
+	public bool IsDead() 
 	{
-		if (dead <= 0) 
-		{
-			//Play dead music, animations, ete
-			Destroy(gameObject);
-		}
+		Debug.Log("Dead now");
+		return isDead;
+	}
+	
+	private void DeadZombie()
+	{
+		if(isDead) return;
+		isDead = true;
+		// Play the dead animation
+		GetComponent<Animator>().SetTrigger("dead");
 	}
 }
+// todo
+// create a public bool to check if its dead
+//if dead, stop the animations and effects

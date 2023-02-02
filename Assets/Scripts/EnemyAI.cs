@@ -15,16 +15,23 @@ public class EnemyAI : MonoBehaviour
 	float targetDistance = Mathf.Infinity;
 	 UnityEngine.AI.NavMeshAgent agent;
 	 Animator animator;
+	 EnemyHealth health;
 	 bool isProvoked = false;
 	void Start()
 	{
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		animator = GetComponent<Animator>();
+		health = GetComponent<EnemyHealth>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		if(health.IsDead()) 
+		{
+			enabled = false;
+			agent.enabled = false;
+		}
 		targetDistance = Vector3.Distance(target.position, transform.position);
 		if(isProvoked) 
 		{
@@ -52,11 +59,14 @@ public class EnemyAI : MonoBehaviour
 	}
 	private void ChaseTarget () 
 	{
+		//should be a bool false
+		// animator.SetTrigger("attack");
 		animator.SetTrigger("move");
 		 agent.SetDestination(target.position);
 	}
 	private void AttackTarget () 
 	{
+		//should be a bool true
 		animator.SetTrigger("attack");
 		Debug.Log("Attacking the player");
 	}
@@ -72,3 +82,6 @@ public class EnemyAI : MonoBehaviour
 	}
 	
 }
+
+//todo
+//disable the enemyAi and navmesh agent if the enemy is dead

@@ -124,10 +124,6 @@ public class Player : MonoBehaviour
 		//destroy the bullet after a while
 		// Destroy(bullet, 1);
 		
-		//
-		// EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-		// if target == null return;
-		//target.TakeDamage(damage)
 		yield return new WaitForSeconds(delayTime);
 		canShoot = true;
 	
