@@ -2819,7 +2819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e088711aaee4d98a8b7feef9f1e9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 3
+  hitPoints: 30
 --- !u!114 &4678001071020997329
 MonoBehaviour:
   m_ObjectHideFlags: 0

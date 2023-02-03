@@ -450,13 +450,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoSlots:
   - ammoType: 0
-    ammoAmount: 0
+    ammoAmount: 33
   - ammoType: 1
-    ammoAmount: 5
+    ammoAmount: 20
   - ammoType: 2
-    ammoAmount: 0
+    ammoAmount: 1000
   - ammoType: 3
-    ammoAmount: 0
+    ammoAmount: 20
 --- !u!54 &135756641613574984
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -486,7 +486,7 @@ CapsuleCollider:
   m_Radius: 0.7
   m_Height: 2.02
   m_Direction: 1
-  m_Center: {x: 0, y: 0.96, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &135756641613574986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +647,10 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 135756641613574980}
+    - target: {fileID: 2212500617240268286, guid: 14d0388ac28da4804bb6678eae77ff64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2795247416403992416, guid: 14d0388ac28da4804bb6678eae77ff64, type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -697,11 +701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7586291319270662294, guid: 14d0388ac28da4804bb6678eae77ff64, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7586291319270662294, guid: 14d0388ac28da4804bb6678eae77ff64, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7586291319270662294, guid: 14d0388ac28da4804bb6678eae77ff64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -729,6 +733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 248698664}
     m_Modifications:
+    - target: {fileID: 7041110751174434751, guid: e3c5f51469e7a4c3fbdb0b6eb4ec2105, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 135756641613574980}
     - target: {fileID: 7489504622340865542, guid: e3c5f51469e7a4c3fbdb0b6eb4ec2105, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -848,13 +856,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6041409851606795132, guid: 16bef4236ec634671ba06312b2a17763, type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041409851606795132, guid: 16bef4236ec634671ba06312b2a17763, type: 3}
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 135756641613574980}
     - target: {fileID: 6041409851606795132, guid: 16bef4236ec634671ba06312b2a17763, type: 3}
       propertyPath: hitEffect
       value: 
-      objectReference: {fileID: 4510735934493935714}
+      objectReference: {fileID: 4585702343309756317, guid: b31e1d9ea9ac046c3a3fc3d76166f83f, type: 3}
     - target: {fileID: 7852251337996223555, guid: 16bef4236ec634671ba06312b2a17763, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.00000029504
@@ -869,11 +881,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16bef4236ec634671ba06312b2a17763, type: 3}
---- !u!1 &4510735934493935714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7852251337996523619, guid: 16bef4236ec634671ba06312b2a17763, type: 3}
-  m_PrefabInstance: {fileID: 5936191345500065793}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5571574528909857646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2248319929848611695, guid: 16bef4236ec634671ba06312b2a17763, type: 3}
